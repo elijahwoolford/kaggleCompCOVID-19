@@ -1,4 +1,3 @@
-import os
 import json
 
 
@@ -15,10 +14,12 @@ class ArticleReader:
         self.body = data["body_text"]
         self.metadata = data["metadata"]
         self.id = data["paper_id"]
+        self.abstract = data["abstract"]
+        self.bib = data["bib_entries"]
 
     def get_text_parts(self):
         data = reader(self.file)
-        text_parts = data["body_text"][0]["text"]
+        text_parts = ""
+        for i in range(len(data["body_text"])):
+            text_parts += data["body_text"][i]["text"]
         return text_parts
-
-
