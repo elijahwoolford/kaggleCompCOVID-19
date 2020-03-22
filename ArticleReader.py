@@ -19,7 +19,4 @@ class ArticleReader:
 
     def get_text_parts(self):
         data = reader(self.file)
-        text_parts = ""
-        for i in range(len(data["body_text"])):
-            text_parts += data["body_text"][i]["text"]
-        return text_parts
+        return "".join(data["body_text"])
