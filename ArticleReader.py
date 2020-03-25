@@ -18,8 +18,7 @@ class ArticleReader:
         self.bib = data["bib_entries"]
 
     def get_text_parts(self):
-        data = reader(self.file)
-        return "".join(data["body_text"])
+    	return "".join([x['text'] for x in self.body])
 
 
 if __name__ == '__main__':
