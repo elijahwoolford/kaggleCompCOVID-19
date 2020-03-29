@@ -1,3 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
 
 2020-03-13/
+.DS_Store
+.idea/encodings.xml
+.idea/kaggleCompCOVID-19.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+__pycache__/

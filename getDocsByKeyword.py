@@ -47,7 +47,7 @@ def get_top_docs_by_keyword(keyword_counts: dict, num_top_aricles: int) -> List[
 
 if __name__ == '__main__':
     # TODO:
-    docs, keyword_counts = gather_docs_by_keyword("/Users/administrator/Desktop/tester", ["is", "are", "and", "or"])
+    docs, keyword_counts = gather_docs_by_keyword("2020-03-13", ["Korea", "China", "Italy"])
     print(docs)
     print(keyword_counts)
-    print(get_top_docs_by_keyword(keyword_counts, 3))
+    print(get_top_docs_by_keyword(keyword_counts, 10))

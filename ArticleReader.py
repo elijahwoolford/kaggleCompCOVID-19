@@ -19,9 +19,10 @@ class ArticleReader:
 
     def get_text_parts(self):
         data = reader(self.file)
-        return "".join(data["body_text"])
+        body_length = range(len(data["body_text"]))
+        return "".join([data["body_text"][i]["text"] + "\n" for i in body_length])
 
 
 if __name__ == '__main__':
     a = ArticleReader("2020-03-13/biorxiv_medrxiv/biorxiv_medrxiv/0a32446730827ad8152c6a61e4738e4e0b231412.json")
-    print(a.body)
+    print(a.get_text_parts())
