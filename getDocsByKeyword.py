@@ -44,6 +44,21 @@ def get_top_docs_by_keyword(keyword_counts: dict, num_top_aricles: int) -> List[
     top_doc_counts = sorted(keyword_counts.items(), key=lambda x: x[1], reverse=True)[:num_top_aricles]
     return [x[0] for x in top_doc_counts]
 
+def get_sentences_with_keywords(docs: List[str], keywords: List[str], n = 30) -> List[str]:
+    for doc in docs:
+        if n > 0:
+            article = ArticleReader(doc)
+            text = article.get_text_parts()
+            text = text.split('. ')
+            for sentence in text:
+                if any(keyword in sentence for keyword in keywords):
+                    print(article.metadata['title'])
+                    print()
+                    print(sentence)
+                    print()
+                    print()
+                    print()
+                    n = n - 1
 
 if __name__ == '__main__':
     # TODO:
